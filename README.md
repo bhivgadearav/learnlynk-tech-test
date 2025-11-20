@@ -1,4 +1,4 @@
-# LearnLynk – Senior Full-Stack Engineer Technical Test
+# LearnLynk – Technical Test
 
 Thank you for your interest in LearnLynk.
 

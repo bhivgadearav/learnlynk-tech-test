@@ -165,3 +165,15 @@ Write **8–12 lines** describing how you would implement a Stripe Checkout flow
 3. Share the link.
 
 Good luck.
+
+Task 5 :-
+First, create a backend API route that calls stripe.checkout.sessions.create() with the application_id and fee amount.
+Store a record in payment_requests with status = "pending".
+Redirect the user to the Checkout URL returned by Stripe.
+After payment, Stripe sends a webhook event (checkout.session.completed).
+In the webhook handler, verify the signature to ensure authenticity.
+Update the payment_requests row to paid.
+Then update the corresponding row in applications → set stage = 'payment_received'.
+Optionally insert a timeline event for tracking.
+Return success to Stripe so it stops retrying.
+The application flow now continues to the next stage.
